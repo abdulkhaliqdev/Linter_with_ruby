@@ -6,7 +6,7 @@
 # num = '<h1> Hello my love </h1>'
 # ColorString.print_error(num)
 require_relative '../lib/read_file'
-path = '../lib/index'
+path = './index.css'
 ReadFile.new(path)
 # user_file = File.read('../index.css')
 # file_data = user_file.readlines
