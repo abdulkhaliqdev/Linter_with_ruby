@@ -17,15 +17,19 @@ This Project is to check Basic CSS linter errors. Its a Capstone Project of Ruby
 
 ### **Bad Code**
 
-![screenshot]()
+![screenshot](./screenshot/bad_code.png)
 
 ### **Good Code**
 
-![screenshot]()
+![screenshot](./screenshot/good_code.png)
 
-### **Live Demo**
+### **Error in File**
 
-![Live Demo]()
+![screenshot](./screenshot/error.png)
+
+### **No Error in File**
+
+![screenshot](./screenshot/no_error.png)
 
 ### **Getting Started**
 
