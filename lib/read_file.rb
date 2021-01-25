@@ -3,13 +3,9 @@ class ReadFile
   def initialize(path)
     @path = path
     @file_data = []
-    puts @path
     file = File.open(path, 'r')
     if file
       @file_data = file.readlines { |i| puts i; @file_data << i }
-      # File.open(file, 'r') do |strings|
-      #   @file_data = strings.readlines.map(&:chomp)
-      # end
     else
       puts 'Unable to open file!'
     end
@@ -27,8 +23,5 @@ class ReadFile
       end
       j += 1
     end
-    # @file_data.each do |i|
-    #   puts i
-    # end
   end
 end

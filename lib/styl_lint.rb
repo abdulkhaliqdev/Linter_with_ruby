@@ -1,5 +1,16 @@
+require 'strscan'
+require_relative './color_string'
+
 class Styllint
-  def initialize(content)
-    @content = content
+  def check_space_before_open_bracket(sp, index_string)
+    s = StringScanner.new(sp)
+    flag = s.scan_until(/\{+/)
+    if flag.nil?
+      # p 'okay fine'
+    else
+      index = s.pos - 2
+      p "line:#{index_string}|#{index}: must be a space before {" unless sp[index] == ' '
+      # p 'okay fine' if sp[index] == ' '
+    end
   end
 end
