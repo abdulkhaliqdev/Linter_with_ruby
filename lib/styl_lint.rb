@@ -2,31 +2,25 @@ require 'strscan'
 require_relative './color_string'
 
 class Styllint
-  def check_space_before_open_bracket(line, index_string)
+  def check_space_before_open_bracket(line, index_string, error)
     s = StringScanner.new(line)
     flag = s.scan_until(/\{+/)
-    if flag.nil?
-      # p 'okay fine'
-    else
+    unless flag.nil?
       index = s.pos - 2
-      p "line:#{index_string}|#{index}: must be a space before {" unless line[index] == ' '
-      # p 'okay fine' if sp[index] == ' '
+      error << "line:#{index_string}|#{index}: must be a space before {" unless line[index] == ' '
     end
   end
 
-  def check_newline_after_open_bracket(line, index_string)
+  def check_newline_after_open_bracket(line, index_string, error)
     s = StringScanner.new(line)
     flag = s.scan_until(/\{+/)
-    if flag.nil?
-      # p 'okay fine'
-    else
+    unless flag.nil?
       index = s.pos
-      p "line:#{index_string}|#{index}: must be a newline after {" unless line[index] == "\n"
-      # p 'okay fine' if sp[index] == "\n"
+      error << "line:#{index_string}|#{index}: must be a newline after {" unless line[index] == "\n"
     end
   end
 
-  def check_intentation_for_regular_line(line, index_string)
+  def check_intentation_for_regular_line(line, index_string, error)
     s = StringScanner.new(line)
     flag = s.scan_until(/\;+/)
     if flag.nil?
@@ -44,7 +38,7 @@ class Styllint
     end
   end
 
-  def check_space_after_colon(line, index_string)
+  def check_space_after_colon(line, index_string, error)
     s = StringScanner.new(line)
     flag = s.scan_until(/\:+/)
     if flag.nil?
@@ -59,7 +53,7 @@ class Styllint
     end
   end
 
-  def check_newline_after_semicolon(line, index_string)
+  def check_newline_after_semicolon(line, index_string, error)
     s = StringScanner.new(line)
     flag = s.scan_until(/\;+/)
     if flag.nil?
@@ -76,7 +70,7 @@ class Styllint
     end
   end
 
-  def check_newline_after_closing_bracket(line, index_string)
+  def check_newline_after_closing_bracket(line, index_string, error)
     s = StringScanner.new(line)
     flag = s.scan_until(/\}/)
     if flag.nil?
@@ -88,7 +82,7 @@ class Styllint
     end
   end
 
-  def check_case_sentitive(line, index_string)
+  def check_case_sentitive(line, index_string, error)
     capital_count = line.scan(/[A-Z]/).length
     p "line:#{index_string}: must be a small letter" unless capital_count <= 0
   end
