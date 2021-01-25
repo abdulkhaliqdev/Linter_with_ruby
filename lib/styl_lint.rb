@@ -75,7 +75,7 @@ class Styllint
     error << "line:#{index_string}: must be a small letter" unless capital_count <= 0
   end
 
-  def check_error(error)
+  def check_error(file_data, error)
     index = 1
     file_data.each do |i|
       check_space_before_open_bracket(i, index, error)
