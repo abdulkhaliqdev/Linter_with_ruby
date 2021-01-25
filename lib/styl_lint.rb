@@ -25,4 +25,22 @@ class Styllint
       # p 'okay fine' if sp[index] == "\n"
     end
   end
+
+  def check_intentation_for_regular_line(sp, index_string)
+    s = StringScanner.new(sp)
+    flag = s.scan_until(/\;+/)
+    if flag.nil?
+      # p 'okay fine'
+    else
+      temp = StringScanner.new(sp)
+      flag1 = temp.scan_until(/\{+/)
+      unless flag1.nil?
+        index = temp.pos
+        p "line:#{index_string}|#{index}: must be a newline after {" unless sp[index] == "\n"
+      else
+        # p 'okay fine' if sp[0] == ' ' && sp[1] == ' '
+        p "line:#{index_string}|1: must be two space start" unless sp[0] == ' ' && sp[1] == ' '
+      end
+    end
+  end
 end
