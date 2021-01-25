@@ -57,5 +57,3 @@ Style/GuardClause:
   Enabled: false
 Style/UnlessElse:
   Enabled: false
-Style/RedundantRegexpEscape:
-  Enabled: false
