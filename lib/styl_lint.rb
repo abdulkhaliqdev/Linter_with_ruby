@@ -87,4 +87,11 @@ class Styllint
       # p 'okay fine' if sp[index] == "\n"
     end
   end
+
+  def check_case_sentitive(sp, index_string)
+    capital_count = sp.scan(/[A-Z]/).length
+    p "line:#{index_string}: must be a small letter" unless capital_count <= 0
+    # p 'okay fine' if capital_count.zero?
+  end
+
 end
