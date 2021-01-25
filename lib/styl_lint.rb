@@ -58,4 +58,23 @@ class Styllint
       end
     end
   end
+
+  def check_newline_after_semicolon(sp, index_string)
+    s = StringScanner.new(sp)
+    flag = s.scan_until(/\;+/)
+    if flag.nil?
+      # p 'okay fine'
+    else
+      index = s.pos
+      if sp[index] == ' '
+        p "line:#{index_string}|#{index}: there is a white space after semicolon"
+      else
+        p "line:#{index_string}|#{index}: must be a newline after semicolon" unless sp[index] == "\n"
+        # p 'pksy fine' if sp[index] == "\n"
+      end
+      p "line:#{index_string}|#{index}: there is a white space before semicolon" if sp[index - 2] == ' '
+    end
+  end
+
+
 end
