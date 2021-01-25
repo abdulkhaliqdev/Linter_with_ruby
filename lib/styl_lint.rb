@@ -94,4 +94,17 @@ class Styllint
     # p 'okay fine' if capital_count.zero?
   end
 
+  def check_error(error)
+    index = 0
+    file_data.each do |i|
+      check_space_before_open_bracket(file_data[index], index+1)
+      check_newline_after_open_bracket(file_data[index], index+1)
+      check_intentation_for_regular_line(file_data[index], index+1)
+      check_space_after_colon(file_data[index], index+1)
+      check_newline_after_semicolon(i, index + 1)
+      check_newline_after_closing_bracket(i, index + 1)
+      check_case_sentitive(i, index + 1)
+      index += 1
+    end
+  end
 end
