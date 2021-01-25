@@ -10,12 +10,15 @@ class ColorString
   def print_error(path)
     number_of_error = @error.size
     if number_of_error.zero?
-      puts 'file:'.concat(path)
+      puts '-----------------------------------------'.colorize(:green)
+      puts "There is #{number_of_error} Number of Error in #{path}\n".colorize(:yellow)
+      puts '-----------------------------------------'.colorize(:green)
       puts 'Great! there is no error in css file'.colorize(:green)
     else
       puts "\n\n"
-      puts 'file:'.concat(path)
-      puts number_of_error
+      puts '-----------------------------------------'.colorize(:green)
+      puts "There is #{number_of_error} Number of Error in #{path}\n".colorize(:yellow)
+      puts '-----------------------------------------'.colorize(:green)
       @error.each do |i|
         puts i.colorize(:red)
       end
