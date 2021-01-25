@@ -1,4 +1,6 @@
 class ReadFile
+  attr_reader :file_data
+
   def initialize(path)
     @path = path
     @file_data = []

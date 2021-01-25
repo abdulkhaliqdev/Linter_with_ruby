@@ -53,3 +53,9 @@ Metrics/BlockNesting:
   Enabled: false
 Style/Next:
   Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/UnlessElse:
+  Enabled: false
+Style/RedundantRegexpEscape:
+  Enabled: false
