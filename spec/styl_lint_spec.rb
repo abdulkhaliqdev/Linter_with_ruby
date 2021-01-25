@@ -3,7 +3,7 @@
 require_relative '../lib/styl_lint'
 
 describe Styllint do
-  let(:instance_variable) { Styllint.new}
+  let(:instance_variable) { Styllint.new }
   describe '#check_space_before_open_bracket' do
     it 'would return true if there is a error' do
       error = []
