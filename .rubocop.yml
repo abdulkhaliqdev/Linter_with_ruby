@@ -57,3 +57,5 @@ Style/GuardClause:
   Enabled: false
 Style/UnlessElse:
   Enabled: false
+Style/BlockComments:
+  Enabled: false
