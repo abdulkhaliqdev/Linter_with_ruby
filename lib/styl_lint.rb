@@ -76,5 +76,15 @@ class Styllint
     end
   end
 
-
+  def check_newline_after_closing_bracket(sp, index_string)
+    s = StringScanner.new(sp)
+    flag = s.scan_until(/\}/)
+    if flag.nil?
+      # p 'okay fine'
+    else
+      index = s.pos
+      p "line:#{index_string}|#{index}: must be a newline after closing bracket" unless sp[index] == "\n"
+      # p 'okay fine' if sp[index] == "\n"
+    end
+  end
 end
