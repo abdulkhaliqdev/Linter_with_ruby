@@ -31,6 +31,10 @@ This Project is to check Basic CSS linter errors. Its a Capstone Project of Ruby
 
 ![screenshot](./screenshot/no_error.png)
 
+### **RSpec Result**
+
+![screenshot](./screenshot/rspec_result.png)
+
 ### **Getting Started**
 
 To get your own copy of our project simply clone the repository to your local machine for that do the instruction.
