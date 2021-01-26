@@ -1,11 +1,5 @@
 class ReadFile
-  attr_reader :file_data
-
-  def initialize(path)
-    @path = path
-    @file_data = []
-    @file_data = read_file
-  end
+  private
 
   def read_file
     file = File.open(@path, 'r')
@@ -17,5 +11,15 @@ class ReadFile
     end
     file.close
     file_data
+  end
+
+  public
+
+  attr_reader :file_data
+
+  def initialize(path)
+    @path = path
+    @file_data = []
+    @file_data = read_file
   end
 end
