@@ -2,6 +2,9 @@ require 'strscan'
 require_relative './color_string'
 
 class Styllint
+
+  private
+
   def check_space_before_open_bracket(line, index_string, error)
     check = false
     s = StringScanner.new(line)
@@ -97,6 +100,8 @@ class Styllint
     error << "line:#{index_string}: must be a small letter" unless capital_count <= 0
     capital_count
   end
+
+  public
 
   def check_error(file_data, error)
     index = 1
