@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    colorize (0.8.1)
+    css_parser (1.8.0)
+      addressable
+    public_suffix (4.0.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colorize
+  css_parser
+
+BUNDLED WITH
+   2.1.4
