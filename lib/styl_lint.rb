@@ -2,7 +2,6 @@ require 'strscan'
 require_relative './color_string'
 
 class Styllint
-
   private
 
   def check_space_before_open_bracket(line, index_string, error)
